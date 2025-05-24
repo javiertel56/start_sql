@@ -1,0 +1,116 @@
+---------------------------
+Modelo ER (Entidad Relacional)
+---------------------------
+Es un modelo de base de datos que se utiliza para representar la información de una base de datos. 
+Es una forma de representar la información de una base de datos en una tabla o en un conjunto de tablas.
+
+ejemplo:
+
+key:(ovalo subrayando la palabra)
+id
+
+Entidad: Casa
+
+Atributos simples: (ovalo)
+tamaño, propietario, precio, fecha de cosntrucción, etc.
+
+atributos compuestos: (doble ovalo)
+ventanas, puertas, cuartos, etc.
+
+atributos derivados: (punteados)
+antiguedad, etc.
+
+________________________________
+practica
+________________________________
+dibujar entidad con 5 atributos (key, simples, compuestos)
+
+
+-----------------------------------------
+Instalar gestor de base de datos
+-----------------------------------------
+-Instalar Sqlite:
+1.- Descargar archivo zip:
+ https://www.sqlite.org/download.html
+sqlite-tools-win-x64-3490200.zip
+(6.13 MiB)	
+2.- Descomprimir archivo zip
+3.- crear carpeta "sqlite3" en disco y copiar los archivos extraidos
+4.- en powershell navegar a la carpeta "sqlite3" 
+5.- correr sqlite con : ./sqlite3.exe
+
+6.- editar variables de entorno
+ a. abir variables de entorno del sistema de windows
+ b. click en variables de entorno..
+ c. doble click en PATH
+ d. click en nuevo
+ e. aceptar, aceptar, aceptar
+
+ 7.- Instalar sqlite browser:
+  https://sqlitebrowser.org/dl/
+  descargar el standar: DB Browser for SQLite - Standard installer for 64-bit Windows
+
+8.- Instalar con next next ...
+
+
+-----------------------------------------
+Crear base de datos
+-----------------------------------------
+Create dabatase "nombre_base_de_datos.db"
+
+-----------------------------------------
+Tipos de datos
+-----------------------------------------
+1.- INTEGER = numero entero
+2.- REAL = numero real
+3.- TEXT = texto
+4.- BLOB = binario
+5.- NUMERIC = numero decimal
+
+-----------------------------------------
+Crear tabla
+-----------------------------------------
+CREATE TABLE nombre_tabla(
+    nombre_campo tipo,
+    nombre_campo tipo,
+    etc.
+
+);
+
+campo = columna
+valor del campo = "celda"
+registro = fila
+
+
+-----------------------------------------
+Insertar registro
+-----------------------------------------
+INSERT INTO nombre_tabla(nombre_campo, nombre_campo, etc.)
+VALUES(valor, valor, etc.); 
+
+AGREGAR VARIOS REGISTROS
+INSERT INTO nombre_tabla(nombre_campo, nombre_campo, etc.)
+VALUES(valor, valor, etc.),
+(valor, valor, etc.),
+(valor, valor, etc.);
+
+
+
+
+-----------------------------------------
+Consultas (en execute sql)
+-----------------------------------------
+-Consultar
+1.-seleccionar todo: SELECT * FROM nombre_tabla
+2.- seleccionar un campo: SELECT nombre_campo FROM nombre_tabla
+3.- seleccionar campo segun el valor: SELECT nombre_campo FROM nombre_tabla WHERE nombre_campo = valor
+
+-eliminar
+1.- eliminar todos: DELETE FROM nombre_tabla
+2.- eliminar un registro: DELETE FROM nombre_tabla WHERE nombre_campo = valor
+
+-actualizar
+ejemplo: 
+update users set name = 'John' where id = 1;
+ejemplo para varios registros:
+update users set name = 'John' where id = 1 or id = 2;
